@@ -8,7 +8,7 @@ import './App.css';
 
 function App() {
   const [city, setCity]=useState([])
-  const [cityNameInput, setCityNameInput] = useState([])
+  const [cityNameInput, setCityNameInput] = useState("")
   const [errorControl, setErrorControl] = useState(false)
 
   const addCity = (e) => {
