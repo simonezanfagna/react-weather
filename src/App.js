@@ -18,31 +18,25 @@ function App() {
 
   const fetchData = async (c) => {
     try {
-      const response = await axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + c + "&units=metric&appid=8d93620cb764f16c628ecfff59e3b991&lang=it");
-      console.log(response.data);
+      const response = await axios.get(
+        "https://api.openweathermap.org/data/2.5/weather?q=" +
+          c +
+          "&units=metric&appid=8d93620cb764f16c628ecfff59e3b991&lang=it"
+      );
+      /* console.log(response.data); */
       setErrorControl(false);
       setCity(response.data);
     } catch (error) {
       setErrorControl(true);
-      console.log(error);
+      /* console.log(error); */
     }
   };
 
   useEffect(() => {
-    /* if (city !== null) {
-      console.log(city);
-    } else {
-      
-    } */
-    console.log(city);
-    /* console.log(Object.keys(city).length); */
-    /* console.log(city.weather); */
-    console.log(city.length);
-
-    if (city.length > 0) {
+    if (cityNameInput.length > 0) {
       setErrorControl(false);
     }
-  }, [city]);
+  }, [cityNameInput]);
 
   return (
     <div>
@@ -50,7 +44,14 @@ function App() {
         <Container>
           <Navbar.Brand href="#">Meteo</Navbar.Brand>
           <Form className="d-flex" onSubmit={addCity}>
-            <FormControl type="search" placeholder="Nome della città" className="mr-2" aria-label="Search" value={cityNameInput} onChange={(e) => setCityNameInput(e.target.value)} />
+            <FormControl
+              type="search"
+              placeholder="Nome della città"
+              className="mr-2"
+              aria-label="Search"
+              value={cityNameInput}
+              onChange={(e) => setCityNameInput(e.target.value)}
+            />
             <Button variant="light">Cerca</Button>
           </Form>
         </Container>
@@ -63,8 +64,17 @@ function App() {
           <input type="submit" value="Cerca"/>
       </form> */}
 
-      <Container className="d-flex justify-content-center mt-2">
-        {city.length === undefined && errorControl === false && <City className="" name={city.name} temp={Math.round(city.main.temp)} description={city.weather[0].description} iconId={city.weather[0].icon} windSpeed={city.wind.speed} />}
+      <Container className="d-flex justify-content-center align-items-center cardContainer">
+        {city.length === undefined && errorControl === false && (
+          <City
+            className=""
+            name={city.name}
+            temp={Math.round(city.main.temp)}
+            description={city.weather[0].description}
+            iconId={city.weather[0].icon}
+            windSpeed={city.wind.speed}
+          />
+        )}
         {errorControl === true && <Error errore={cityNameInput} />}
       </Container>
     </div>
