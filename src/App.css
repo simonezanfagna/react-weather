@@ -1,16 +1,21 @@
+.containerBig {
+  height: 100%;
+  overflow-y: scroll;
+}
+
 .cardContainer {
-  height: calc(100vh - 94px);
+  height: calc(100% - 94px);
 }
 
 .cardContainer .card {
   border: 0;
   width: 200px;
   height: fit-content;
-  position: absolute;
+  /* position: absolute; */
 }
 
 @media screen and (min-width: 366px) {
   .cardContainer {
-    height: calc(100vh - 56px);
+    height: calc(100% - 56px);
   }
 }

@@ -39,7 +39,7 @@ function App() {
   }, [cityNameInput]);
 
   return (
-    <div>
+    <div className="containerBig">
       <Navbar expand="lg" variant="dark" bg="dark">
         <Container>
           <Navbar.Brand href="#">Meteo</Navbar.Brand>
