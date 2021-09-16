@@ -40,7 +40,7 @@ function App() {
 
   return (
     <div className="containerBig">
-      <Navbar expand="lg" variant="dark" bg="dark">
+      <Navbar className="navbar_top" expand="lg" variant="dark">
         <Container>
           <Navbar.Brand href="#">Meteo</Navbar.Brand>
           <Form className="d-flex" onSubmit={addCity}>

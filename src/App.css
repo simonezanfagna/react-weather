@@ -1,17 +1,35 @@
 .containerBig {
   height: 100%;
+  width: 100%;
   overflow-y: scroll;
+  position: absolute;
+  background-color: #3fb0ac;
+}
+
+.navbar_top {
+  background-color: #173e43;
+}
+
+.navbar_top .form-control:focus {
+  border-color: inherit;
+  -webkit-box-shadow: none;
+  box-shadow: none;
 }
 
 .cardContainer {
+  min-height: 400px;
   height: calc(100% - 94px);
+  min-width: 100%;
 }
 
 .cardContainer .card {
   border: 0;
   width: 200px;
   height: fit-content;
-  /* position: absolute; */
+  position: unset;
+  background-color: #dddfd4;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
 
 @media screen and (min-width: 366px) {
