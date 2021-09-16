@@ -52,7 +52,9 @@ function App() {
               value={cityNameInput}
               onChange={(e) => setCityNameInput(e.target.value)}
             />
-            <Button variant="light">Cerca</Button>
+            <Button variant="light" onClick={addCity}>
+              Cerca
+            </Button>
           </Form>
         </Container>
       </Navbar>
